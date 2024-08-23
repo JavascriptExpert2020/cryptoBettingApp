@@ -1,0 +1,57 @@
+<h1 matDialogTitle>{{data.title}}</h1>
+        <div fxLayout="row wrap" fxLayout.lt-sm="column" style="margin-top: 3%;">
+            <div fxFlex="50"  class="pr-16" >
+                <h3>Symbol Name</h3>
+                <p>{{data.payload.symbol_code}}</p>
+            </div>
+            <br>
+            <div fxFlex="50"  class="pr-16">
+                <h3>Trend</h3>
+                <p>{{data.payload.trend}} sec</p>
+            </div>
+            <div fxFlex="50"  class="pr-16">
+                <h3>Started At</h3>
+                <p>{{createdAt(data.payload.startedAt)}}</p>
+            </div>
+            <div fxFlex="50"  class="pr-16">
+                <h3>Closed At</h3>
+                <p>{{createdAt(data.payload.closedAt)}}</p>
+            </div>
+            <div fxFlex="50"  class="pr-16">
+                <h3>Strike Rate</h3>
+                <p>{{data.payload.strikeRate}}</p>
+            </div>
+            <div fxFlex="50"  class="pr-16">
+                <h3>Closing Strike Rate</h3>
+                <p>{{data.payload.closingStrikeRate}}</p>
+            </div>
+            <div fxFlex="50"  class="pr-16">
+                <h3>Strike Amount</h3>
+                <p>{{data.payload.strike_amount}}</p>
+            </div>
+            <div fxFlex="50"  class="pr-16">
+                <h3>Winning Amount</h3>
+                <p>{{data.payload.winning_amount}}</p>
+            </div>
+            <div fxFlex="50"  class="pr-16">
+                <h3>Type</h3>
+                <p>{{data.payload.type}}</p>
+            </div>
+            <div fxFlex="50"  class="pr-16">
+                <h3>Result</h3>
+                <mat-chip mat-sm-chip [color]="'success'" [selected]="data.payload.result" *ngIf="data.payload.result=='success'" style="background-color: #1b5e20;color:#fff">{{data.payload.result}}</mat-chip>
+                <mat-chip mat-sm-chip [color]="'failure'" [selected]="data.payload.result" *ngIf="data.payload.result!='success'" style="background-color: red;color:#fff">{{data.payload.result}}</mat-chip>
+            </div>
+            <div fxFlex="50"  class="pr-16">
+                <h3>Status</h3>
+                <mat-chip mat-sm-chip [color]="'primary'" [selected]="data.payload.status">{{data.payload.status ? data.payload.status : '---'}}</mat-chip>
+            </div>
+        <br>
+        <br>
+        <br>
+        <div fxFlex="100" class="mt-16">
+            <!-- <button mat-raised-button color="primary" [disabled]="itemForm.invalid"><a href={{itemForm.controls['url']}}>{{"View Document"}}</a></button> -->
+            <span fxFlex></span>
+            <button mat-button color="warn" type="button" (click)="dialogRef.close(false)">Cancel</button>
+          </div>      
+        </div>

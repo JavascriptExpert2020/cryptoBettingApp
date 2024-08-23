@@ -1,0 +1,69 @@
+<div class="m-333">
+    <!-- <span fxFlex></span> -->
+    <!-- <button mat-raised-button class="mb-8" color="primary" (click)="openPopUp({}, true)" routerLink="/admin/add-customer">{{"ADD"}} {{"MEMBER"}}</button> -->
+  </div>
+  <mat-card class="p-0" [@animate]="{value:'*',params:{y:'50px',delay:'300ms'}}">
+    <mat-card-content class="p-0">
+      <div style="margin-bottom: 1%;margin-top: 1%;margin-left: 1%;">
+        <form>
+        <input type="text" placeholder="Search By Name" style="border-radius: 8px;padding: 8px 8px 8px 8px;" [(ngModel)]="name" name="name">
+        <input type="text" placeholder="Search By Email" style="border-radius: 8px;padding: 8px 8px 8px 8px;margin-left: 1%;" [(ngModel)]="email" name="email">
+        <!-- <input type="text" placeholder="Search By City" style="border-radius: 8px;padding: 8px 8px 8px 8px;margin-left: 1%;" [(ngModel)]="city" name="city">
+        <input type="text" placeholder="Search By Country" style="border-radius: 8px;padding: 8px 8px 8px 8px;margin-left: 1%;" [(ngModel)]="country" name="country"> -->
+        <input type="text" placeholder="Search By Phone #" style="border-radius: 8px;padding: 8px 8px 8px 8px;margin-left: 1%;" [(ngModel)]="phoneno" name="phoneno">  
+    
+        <button mat-raised-button class="mb-8" color="primary" (click)="searchFunc()" style="margin-left: 1%;">Search</button>
+        <button mat-raised-button class="mb-8" color="accent" (click)="clearFunc()" style="margin-left: 1%;">Clear</button>
+
+      </form>
+    </div>
+      <ngx-datatable
+            class="material ml-0 mr-0"
+            [rows]="users"
+            [columnMode]="'force'"
+            [headerHeight]="50"
+            [footerHeight]="50"
+            [scrollbarH]="true"
+            [limit]="10"
+            [rowHeight]="50">
+            <ngx-datatable-column name="Name" [flexGrow]="1" >
+              <ng-template let-row="row" ngx-datatable-cell-template >
+                {{ row?.name }}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Email" [flexGrow]="1" >
+              <ng-template let-row="row" ngx-datatable-cell-template >
+                {{ row?.email }}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="City" [flexGrow]="1">
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                {{ row?.city }}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Country" [flexGrow]="1">
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                {{ row?.country }}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Phone #" [flexGrow]="1">
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                {{ row?.phoneNo }}
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Status" [flexGrow]="1">
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                <mat-chip mat-sm-chip [color]="'primary'" [selected]="row.isActive">{{row.blackList ? 'inactive' : 'active'}}</mat-chip>
+                <!-- <mat-chip mat-sm-chip [color]="'primary'" [routerLink]="['/admin/form']">Generate Cargo Receipt</mat-chip> -->
+              </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Actions" [flexGrow]="1">
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                <button mat-icon-button mat-sm-button color="primary" class="mr-16" (click)="openPopUp(row)"><mat-icon>edit</mat-icon></button>
+                <!-- <button mat-icon-button mat-sm-button color="warn" (click)="deleteItem(row)"><mat-icon>delete</mat-icon></button> -->
+              </ng-template>
+            </ngx-datatable-column>
+          </ngx-datatable>
+    </mat-card-content>
+  </mat-card>
+  

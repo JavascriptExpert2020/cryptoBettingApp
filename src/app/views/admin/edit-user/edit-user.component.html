@@ -1,0 +1,117 @@
+<h1 matDialogTitle>{{data.title}}</h1>
+<!-- {{"ADD" }} {{"MEMBER" }} -->
+  <form [formGroup]="itemForm" (ngSubmit)="submit()">
+  <div fxLayout="row wrap" fxLayout.lt-sm="column">
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="username"
+        [formControl]="itemForm.controls['name']"
+        placeholder="Name" 
+        readonly>
+      </mat-form-field>
+    </div>
+
+    <!-- <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        type="number"
+        name="age"
+        [formControl]="itemForm.controls['age']"
+        placeholder="Truck #">
+      </mat-form-field>
+    </div> -->
+
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        type="email"
+        name="email"
+        [formControl]="itemForm.controls['email']"
+        placeholder="Email" 
+        readonly>
+      </mat-form-field>
+    </div>
+
+    <!-- <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="company"
+        [formControl]="itemForm.controls['company']"
+        placeholder="Company">
+      </mat-form-field>
+    </div> -->
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="phone"
+        [formControl]="itemForm.controls['phoneNo']"
+        placeholder="Phone" 
+        readonly>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="address"
+        [formControl]="itemForm.controls['address']"
+        placeholder="address" readonly>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="City"
+        [formControl]="itemForm.controls['city']"
+        placeholder="City" readonly>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="Country"
+        [formControl]="itemForm.controls['country']"
+        placeholder="Country" readonly>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="Zip Code"
+        [formControl]="itemForm.controls['zipCode']"
+        placeholder="Zip Code" readonly>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="Date of Birth"
+        [formControl]="itemForm.controls['dob']"
+        placeholder="Date of Birth" readonly>
+      </mat-form-field>
+    </div>
+    <!-- <div fxFlex="50"  class="pt-16 pr-16">
+      <mat-slide-toggle [formControl]="itemForm.controls['verified']">Active Customer</mat-slide-toggle>
+    </div> -->
+    <div fxFlex="50"  class="pt-16 pr-16">
+      <mat-slide-toggle [formControl]="itemForm.controls['blackList']">Black List User</mat-slide-toggle>
+    </div>
+
+
+    <div fxFlex="100" class="mt-16">
+      <button mat-raised-button color="primary" [disabled]="itemForm.invalid">{{"SAVE"}}</button>
+      <span fxFlex></span>
+      <button mat-button color="warn" type="button" (click)="dialogRef.close(false)">Cancel</button>
+    </div>
+  </div>
+  </form>

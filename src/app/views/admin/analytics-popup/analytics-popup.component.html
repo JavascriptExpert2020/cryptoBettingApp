@@ -1,0 +1,29 @@
+<h1 matDialogTitle>{{data.title}}</h1>
+<!-- {{"ADD" }} {{"MEMBER" }} -->
+  <form [formGroup]="itemForm" (ngSubmit)="submit()">
+  <div fxLayout="row wrap" fxLayout.lt-sm="column">
+    <div fxFlex="100"  class="pr-16">
+        <h3>Name</h3>
+        <p>{{itemForm.controls['name'].value}}</p>
+    </div>
+
+    <div fxFlex="100"  class="pr-16" style="margin-top: 3%;">
+        <h3>Description</h3>
+        <p>{{itemForm.controls['desc'].value}}</p>
+    </div>
+    <mat-chip mat-sm-chip [color]="'primary'"><a href={{url}} target="_blank">View Document</a></mat-chip>
+    <!-- <div fxFlex="50"  class="pt-16 pr-16">
+      <mat-slide-toggle [formControl]="itemForm.controls['verified']">Active Customer</mat-slide-toggle>
+    </div> -->
+    <!-- <div fxFlex="50"  class="pt-16 pr-16">
+      <mat-slide-toggle [formControl]="itemForm.controls['blackList']">Black List User</mat-slide-toggle>
+    </div> -->
+
+
+    <div fxFlex="100" class="mt-16">
+      <!-- <button mat-raised-button color="primary" [disabled]="itemForm.invalid"><a href={{itemForm.controls['url']}}>{{"View Document"}}</a></button> -->
+      <span fxFlex></span>
+      <button mat-button color="warn" type="button" (click)="dialogRef.close(false)">Cancel</button>
+    </div>
+  </div>
+  </form>

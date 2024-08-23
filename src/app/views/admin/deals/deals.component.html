@@ -1,0 +1,92 @@
+<mat-card class="p-0" [@animate]="{value:'*',params:{y:'50px',delay:'300ms'}}">
+    <mat-card-content class="p-0">
+
+              <div fxLayout="row wrap" style="margin-top: 3%;">
+                <div fxFlex="100" fxFlex.gt-xs="50" class="pr-16">
+              <div class="mb-16 mt-16">
+              <h3 style="margin-left: 3%;">Edit</h3>
+              <!-- <input type="file" ng2FileSelect [uploader]="uploader" /> -->
+            </div>
+            <form style="margin-left: 3%">
+                <div class="pb-16">
+                    <mat-form-field class="full-width">
+                      <input
+                      matInput
+                      name="From"
+                      placeholder="From"
+                      value={{symbolData.name}} readonly>
+                    </mat-form-field>
+                  </div>
+      
+                  <div class="pb-16">
+                      <mat-form-field class="full-width">
+                        <input
+                        matInput
+                        name="Exchange Name"
+                        placeholder="Exchange Name"
+                        value={{symbolData.exchange_name}} readonly>
+                      </mat-form-field>
+                    </div>
+      
+                    <div class="pb-16">
+                      <mat-form-field class="full-width">
+                        <input
+                        matInput
+                        name="Percent Up"
+                        placeholder="Percent Up"
+                        value={{symbolData.percentUp}}
+                        [(ngModel)]="symbolData.percentUp">
+                      </mat-form-field>
+                    </div>
+      
+      
+                    <div class="pb-16">
+                      <mat-form-field class="full-width">
+                        <input
+                        matInput
+                        name="Percent Down"
+                        placeholder="Percent Down"
+                        value={{symbolData.percentDown}}
+                        [(ngModel)]="symbolData.percentDown">
+                      </mat-form-field>
+                    </div>
+                  </form>
+          </div>
+        
+          <div fxFlex="100" fxFlex.gt-xs="50">
+            <div class="mb-16 mt-16">
+              <h3>Select Trends:</h3>
+              <!-- <input type="file" ng2FileSelect [uploader]="uploader" /> -->
+            </div>
+              <form>
+                <div class="pb-16">
+                    <section class="example-section" >
+
+                        <p><mat-checkbox [(ngModel)]="symbolData.oneMint" name="oneMint">60 Seconds</mat-checkbox></p>
+                        <p><mat-checkbox [(ngModel)]="symbolData.onehalfMint" name="onehalfMint">90 Seconds</mat-checkbox></p>
+
+                        <p><mat-checkbox [(ngModel)]="symbolData.twoMint" name="twoMint">120 Seconds</mat-checkbox></p>
+                        <p><mat-checkbox [(ngModel)]="symbolData.twohalfMint" name="twohalfMint">150 Seconds</mat-checkbox></p>
+
+                        <p><mat-checkbox [(ngModel)]="symbolData.threeMint" name="threeMint">180 Seconds</mat-checkbox></p>
+                        <p><mat-checkbox [(ngModel)]="symbolData.threehalfMint" name="threehalfMint">210 Seconds</mat-checkbox></p>
+    
+                        <p><mat-checkbox [(ngModel)]="symbolData.fourMint" name="fourMint">240 Seconds</mat-checkbox></p>
+                        <p><mat-checkbox [(ngModel)]="symbolData.fouthalfMint" name="fouthalfMint">270 Seconds</mat-checkbox></p>
+    
+                        <p><mat-checkbox [(ngModel)]="symbolData.fiveMint" name="fiveMint">300 Seconds</mat-checkbox></p>
+
+                        <mat-slide-toggle [(ngModel)]="symbolData.isActive" name="isActive">Active / Inactive </mat-slide-toggle>
+
+  
+                      </section>
+
+                          
+            </div>
+          </form>
+          </div>
+        </div>
+        <button mat-raised-button color="primary" (click)="updateSymbol()" style="margin-left: 3%;margin-bottom: 5%;">Save</button>
+
+    </mat-card-content>
+</mat-card>

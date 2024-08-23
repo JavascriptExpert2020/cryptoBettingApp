@@ -1,0 +1,155 @@
+<h1 matDialogTitle>{{data.title}}</h1>
+<!-- {{"ADD" }} {{"MEMBER" }} -->
+  <form [formGroup]="itemForm" (ngSubmit)="submit()">
+  <div fxLayout="row wrap" fxLayout.lt-sm="column">
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="username"
+        [formControl]="itemForm.controls['title']"
+        placeholder="Title"
+        readonly>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        type="bank_name"
+        name="age"
+        [formControl]="itemForm.controls['bank_name']"
+        placeholder="Bank Name" readonly>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        type="email"
+        name="email"
+        [formControl]="itemForm.controls['amount']"
+        placeholder="Amount" readonly>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        type="email"
+        name="email"
+        [formControl]="itemForm.controls['city']"
+        placeholder="City" readonly>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        type="email"
+        name="email"
+        [formControl]="itemForm.controls['country']"
+        placeholder="Country" readonly>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        type="email"
+        name="email"
+        [formControl]="itemForm.controls['createdAt']"
+        placeholder="Created At" readonly>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        type="email"
+        name="email"
+        [formControl]="itemForm.controls['iban']"
+        placeholder="IBAN" readonly>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        type="email"
+        name="email"
+        [formControl]="itemForm.controls['transactionDate']"
+        placeholder="Transaction Date" readonly>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        type="email"
+        name="email"
+        [formControl]="itemForm.controls['accountBalance']"
+        placeholder="Account Balance" readonly>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        type="email"
+        name="email"
+        [formControl]="itemForm.controls['accountType']"
+        placeholder="Account Type" readonly>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        type="email"
+        name="email"
+        [formControl]="itemForm.controls['tradeableBalance']"
+        placeholder="Tradeable Balance" readonly>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50"  class="pr-16">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="company"
+        [formControl]="itemForm.controls['status']"
+        placeholder="Status" readonly>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="100"  class="pt-16 pr-16">
+      <label id="example-radio-group-label">Update Status</label>
+      <br>
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [formControl]="itemForm.controls['statusToggle']">
+        <mat-radio-button class="example-radio-button" value="pending">
+          Pending
+        </mat-radio-button>
+        <mat-radio-button class="example-radio-button" value="Completed" style="margin-left: 2%;">
+          Completed
+        </mat-radio-button>
+        <mat-radio-button class="example-radio-button" value="Rejected" style="margin-left: 2%;">
+          Rejected
+        </mat-radio-button>
+      </mat-radio-group>
+      <!-- <mat-slide-toggle  onchange="onChangeToggle()">Complete / Revert</mat-slide-toggle> -->
+    </div>
+
+    <div fxFlex="100" class="mt-16">
+      <button mat-raised-button color="primary" >{{"SAVE"}}</button>
+      <span fxFlex></span>
+      <button mat-button color="warn" type="button" (click)="dialogRef.close(false)">Cancel</button>
+    </div>
+  </div>
+  </form>
